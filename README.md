@@ -1,2 +1,3 @@
-# exo-chat-extension-sample
-eXo Chat extension sample
+# eXo Chat extension sample
+
+Chat Extension sample for eXo Platform.

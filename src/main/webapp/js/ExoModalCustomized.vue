@@ -1,0 +1,39 @@
+<template>
+  <div class="chat-modal-mask uiPopupWrapper">
+    <div :class="modalClass" class="uiPopup chat-modal">
+      <div class="popupHeader">
+        <span class="PopupTitle popupTitle">{{ title }}</span>
+        <a v-if="displayClose" class="uiIconClose pull-right" @click="closeModal"></a> 
+      </div>
+      <div class="PopupContent popupContent">
+        <div style="color: red;text-align: center;font-size: 14pt;">Overridden template !</div>
+        <slot></slot>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  props: {
+    displayClose: {
+      type: Boolean,
+      default: true
+    },
+    title: {
+      type: String,
+      default: ''
+    },
+    modalClass: {
+      type: String,
+      default: ''
+    }
+  },
+  methods: {
+    closeModal() {
+      // Emit the click event of close icon
+      this.$emit('modal-closed');
+    }
+  }
+};
+</script>
